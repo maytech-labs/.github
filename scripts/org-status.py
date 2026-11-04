@@ -25,6 +25,8 @@ PROFILE = ROOT / "profile" / "README.md"
 DEFAULT_SITE = ROOT.parent / f"{ORG}.github.io" / "index.html"
 # Repos that are the profile and the site themselves, not projects to list.
 META = {".github", f"{ORG}.github.io"}
+# The license badge every README carries (docs/decisions/0002-real-license.md).
+BADGE = "img.shields.io/badge/License-REAL_1.0"
 
 
 def token():
@@ -64,6 +66,9 @@ def fetch_repo(repo, auth):
         if license_text:
             break
     first = next((l for l in (license_text or "").splitlines() if l.strip()), "")
+    url = (f"https://api.github.com/repos/{ORG}/{name}/contents/README.md?ref={branch}" if repo["private"]
+           else f"https://raw.githubusercontent.com/{ORG}/{name}/{branch}/README.md")
+    readme = get(url, auth if repo["private"] else None, raw=True) or ""
     return {
         "name": name,
         "description": repo["description"] or "",
@@ -73,6 +78,7 @@ def fetch_repo(repo, auth):
         "release": version(release["tag_name"]) if release else None,
         "license": "REAL 1.0" if "Reciprocal Ethical AI License" in first and "1.0" in first
         else ("missing" if not license_text else "other"),
+        "badge": BADGE in readme,
     }
 
 
@@ -96,6 +102,8 @@ def check(repos, profile, site):
     names = {r["name"] for r in repos}
     for r in repos:
         n = r["name"]
+        if not r["archived"] and not r["badge"]:
+            drift.append(f"{n}: README has no REAL 1.0 license badge")
         if n in META:
             continue
         if r["private"]:

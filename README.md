@@ -1,5 +1,7 @@
 # maytech-labs/.github
 
+[![License: REAL 1.0](https://img.shields.io/badge/License-REAL_1.0-blue.svg)](LICENSE.md)
+
 The [maytech-labs](https://github.com/maytech-labs) organization profile, org-wide decisions, and default community health files.
 
 - [`profile/README.md`](profile/README.md): the org profile page.

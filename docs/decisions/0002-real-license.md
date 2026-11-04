@@ -12,6 +12,13 @@ maytech-labs wrote the [Reciprocal Ethical AI License (REAL) 1.0](https://github
 - Every maytech-labs repo has REAL 1.0 as `LICENSE.md` in its root, copyright maytech-labs and the year the repo starts. (mochi-donut names its author instead; either passes `real-check`.)
 - The text is exactly the [real-license](https://github.com/maytech-labs/real-license/blob/main/LICENSE.md) template with only the copyright line filled in, so `real-check repo .` passes.
 - Source files carry `SPDX-License-Identifier: LicenseRef-REAL-1.0`.
+- Every README starts with the REAL 1.0 badge under its title, linking to `LICENSE.md` (the org profile links to real-license):
+
+  ```md
+  [![License: REAL 1.0](https://img.shields.io/badge/License-REAL_1.0-blue.svg)](LICENSE.md)
+  ```
+
+  GitHub can't identify REAL, so its own license label says "Other"; the badge says what the license is before anyone opens the file.
 - Third-party code keeps its own license, noted beside it.
 - Public descriptions call the projects source-available, not open source.
 

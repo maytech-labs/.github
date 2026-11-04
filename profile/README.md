@@ -1,5 +1,7 @@
 # MayTech Labs
 
+[![License: REAL 1.0](https://img.shields.io/badge/License-REAL_1.0-blue.svg)](https://github.com/maytech-labs/real-license)
+
 Small, careful tools for low-level code and AI-era licensing. Everything here is source-available under [REAL 1.0](https://github.com/maytech-labs/real-license).
 
 ## Projects

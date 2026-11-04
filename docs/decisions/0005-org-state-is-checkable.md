@@ -12,7 +12,7 @@ The profile ([profile/README.md](../../profile/README.md)) and the website ([000
 - [`scripts/org-status.py`](../../scripts/org-status.py) reports the org's state and where the profile and site have drifted from it. It's Python with no dependencies beyond the standard library.
 - For each repo it reports the latest release, the license (whether it's REAL 1.0, per [0002](0002-real-license.md)), the last push, and the description. Release tags may carry a prefix (`godo-v0.1.0`); the version is what follows it.
 - Private repos are checked only for their license, and reported if the profile or site links to one. They're never expected on the public pages. Seeing them takes a GitHub token (`GITHUB_TOKEN` or `gh auth login`); without one the script says so and checks public repos only.
-- It reports drift: a repo missing from the profile or the site, an archived repo still listed, a link to a repo that doesn't exist, a version badge that doesn't match the latest release, a repo marked pre-release that has a release, a repo with no description, or a license other than REAL 1.0.
+- It reports drift: a repo missing from the profile or the site, an archived repo still listed, a link to a repo that doesn't exist, a version badge that doesn't match the latest release, a repo marked pre-release that has a release, a repo with no description, a license other than REAL 1.0, or a README without the license badge.
 - It exits 0 when in sync, 1 on drift, and 2 when it can't run, so it can run in CI.
 - `--json` prints the same data for other tools to read.
 - Run it before editing the profile or the site, and after any repo is created, archived, or released.
