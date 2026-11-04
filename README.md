@@ -13,7 +13,7 @@ scripts/org-status.py          # table of repos, then any drift
 scripts/org-status.py --json   # same data as JSON
 ```
 
-It lists every public repo's latest release, license, and last push, and reports where the profile or the [website](https://github.com/maytech-labs/maytech-labs.github.io) is out of date. It exits 1 on drift. Run it before editing either, and after creating, archiving, or releasing a repo ([0005](docs/decisions/0005-org-state-is-checkable.md)). It reads the site from `../maytech-labs.github.io` if you have it cloned beside this repo, or from GitHub otherwise.
+It lists every repo's latest release, license, and last push, and reports where the profile or the [website](https://github.com/maytech-labs/maytech-labs.github.io) is out of date. It exits 1 on drift. Run it before editing either, and after creating, archiving, or releasing a repo ([0005](docs/decisions/0005-org-state-is-checkable.md)). It reads the site from `../maytech-labs.github.io` if you have it cloned beside this repo, or from GitHub otherwise.
 
 ## License
 
