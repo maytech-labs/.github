@@ -11,3 +11,5 @@ Copy [0000-template.md](0000-template.md) to add one. Don't edit an accepted dec
 | [0003](0003-one-homebrew-tap.md) | One Homebrew tap for every tool | Accepted |
 | [0004](0004-site-on-github-pages.md) | The website is static, on GitHub Pages | Accepted |
 | [0005](0005-org-state-is-checkable.md) | The org's state is checkable with one command | Accepted |
+| [0006](0006-closed-source-projects-on-the-site.md) | The site can show closed-source projects from outside the org | Accepted |
+| [0007](0007-site-sections-earn-their-place.md) | Site sections appear when they have something in them | Accepted |
